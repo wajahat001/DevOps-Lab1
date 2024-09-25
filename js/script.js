@@ -16,7 +16,7 @@ const convertToMinutesSeconds = (seconds) => {
 }
 
 async function getsong() {
-    let song = await fetch("https://github.com/wajahat001/DevOps-Lab1/tree/main/songoo");
+    let song = await fetch("/songoo/");
     let response = await song.text();
     let div = document.createElement("div");
     div.innerHTML = response;
