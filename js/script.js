@@ -32,7 +32,8 @@ async function getsong() {
 }
 
 const playMusic = (track, pause = false) => {
-    currentSong.src = "/songoo/" + track;
+    currentSong.src = `${basePath}/songs/` + track;  // Dynamic path using basePath
+
     if (!pause) {
         currentSong.play();
         play.src = "Img/pause.svg";
@@ -70,10 +71,11 @@ async function main() {
     playButton.addEventListener("click", () => {
         if (currentSong.paused) {
             currentSong.play();
-            playButton.src = "Img/pause.svg";
+            playButton.src = `${basePath}/Img/play.svg`;  // Dynamic path using basePath
         } else {
             currentSong.pause();
-            playButton.src = "Img/play-solid.svg";
+            playButton.src = `${basePath}/Img/play.svg`;  // Dynamic path using basePath
+
         }
     });
 
